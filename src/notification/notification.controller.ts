@@ -1,7 +1,7 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, Sse } from '@nestjs/common';
+import { Controller, Post, Body, Sse } from '@nestjs/common';
 import { NotificationService } from './notification.service';
-import { CreateNotificationDto } from './dto/create-notification.dto';
-import { UpdateNotificationDto } from './dto/update-notification.dto';
+import { IMessage } from 'src/interfaces/IMessage.interface';
+import { CreateNotificationsDto } from './dto/create-notifications.dto';
 
 @Controller('notification')
 export class NotificationController {
@@ -13,4 +13,10 @@ export class NotificationController {
     return this.notificationService.notificationListener();
   }
 
+
+  // create new notification
+  @Post()
+  async createNotification(@Body() createNotificationsDto: CreateNotificationsDto): Promise<IMessage> {
+    return await this.notificationService.createNotification(createNotificationsDto);
+  }
 }
