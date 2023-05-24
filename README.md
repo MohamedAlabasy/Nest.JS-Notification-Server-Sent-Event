@@ -9,7 +9,7 @@ The goal of the project is to raise notification by use server sent event (SSE).
 `Step 1` : To use this project must install [Node.js](https://nodejs.org/en/) and [Mongodb](https://www.mongodb.com/try/download/community) Then Download the source code
 
 ```
-git clone https://github.com/MohamedAlabasy/Notification-Server-Sent-Event.git
+git clone https://github.com/MohamedAlabasy/Nest.JS-Notification-Server-Sent-Event.git
 ```
 
 `Step 2` : Enter the project file then install package
@@ -24,7 +24,7 @@ npm i
 npm run start:dev
 ```
 
-`Step 4` : Open [postman](https://www.postman.com/downloads/) and import : [API Collation](https://github.com/MohamedAlabasy/Notification-Server-Sent-Event/blob/main/api_collection.json) You will find it in the project file.
+`Step 4` : Open [postman](https://www.postman.com/downloads/) and import : [API Collation](https://github.com/MohamedAlabasy/Nest.JS-Notification-Server-Sent-Event/blob/main/api_collection.json) You will find it in the project file.
 
 <hr>
 
