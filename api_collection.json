@@ -1,0 +1,298 @@
+{
+	"info": {
+		"_postman_id": "b7010851-8697-40a1-9014-2c10b478e16c",
+		"name": "Node Notification SSE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19706659"
+	},
+	"item": [
+		{
+			"name": "Notification Listener",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/notification/listener",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"notification",
+						"listener"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Notification",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/notification",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"notification"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get All Notification",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/notification",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"notification"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "669"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"29d-xK3alnYNPmtBe83Tk5axu0+JHqo\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 24 May 2023 14:49:06 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": \"05f68160-fa42-11ed-83b5-a950266b2e2b\",\n        \"title\": \"first notification\",\n        \"description\": \"this is a first notification\",\n        \"isSeen\": false,\n        \"createdAt\": \"2023-05-24T14:48:19.323Z\",\n        \"updatedAt\": \"2023-05-24T14:48:19.323Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"189ea8b0-fa42-11ed-83b5-a950266b2e2b\",\n        \"title\": \"second notification\",\n        \"description\": \"this is a second notification\",\n        \"isSeen\": false,\n        \"createdAt\": \"2023-05-24T14:48:50.620Z\",\n        \"updatedAt\": \"2023-05-24T14:48:50.620Z\",\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"1e1f32a0-fa42-11ed-83b5-a950266b2e2b\",\n        \"title\": \"third notification\",\n        \"description\": \"this is a third notification\",\n        \"isSeen\": false,\n        \"createdAt\": \"2023-05-24T14:48:59.851Z\",\n        \"updatedAt\": \"2023-05-24T14:48:59.851Z\",\n        \"__v\": 0\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Update Unseen Notification by Ids",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"notifications_ids\":[\r\n        \"05f68160-fa42-11ed-83b5-a950266b2e2b\",\r\n        \"189ea8b0-fa42-11ed-83b5-a950266b2e2b\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/notification",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"notification"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update Unseen Notification by Ids",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"notifications_ids\":[\r\n        \"05f68160-fa42-11ed-83b5-a950266b2e2b\",\r\n        \"189ea8b0-fa42-11ed-83b5-a950266b2e2b\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/notification",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"notification"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "34"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"22-e8DHkCLolr9L75VLM82sexBm4kE\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 24 May 2023 14:50:09 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"updated successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Notification",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"first notification\",\r\n    \"description\":\"this is a first notification\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/notification",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"notification"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create Notification",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"first notification\",\r\n    \"description\":\"this is a first notification\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/notification",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"notification"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "44"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2c-92t6FZNkPQlS/taE6iH+KRqiEU0\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 24 May 2023 14:48:19 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"notification sent successfully\"\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "http://127.0.0.1:3000",
+			"type": "string"
+		}
+	]
+}
