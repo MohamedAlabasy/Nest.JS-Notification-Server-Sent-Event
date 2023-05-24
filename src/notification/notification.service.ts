@@ -14,6 +14,7 @@ export class NotificationService {
 
   constructor(@InjectModel(Notification.name) private notificationModel: Model<Notification>) { }
 
+
   notificationListener() {
     try {
       return this.subject.asObservable().pipe(
@@ -26,6 +27,12 @@ export class NotificationService {
     }
   }
 
+
+  /**
+   * create new notification
+   * @param createNotificationsDto title & description
+   * @returns message => notification sent successfully 
+   */
   async createNotification(createNotificationsDto: CreateNotificationsDto): Promise<IMessage> {
     try {
       const notification = await new this.notificationModel({
@@ -45,6 +52,11 @@ export class NotificationService {
   }
 
 
+  /**
+   * update unseen notification by array of Ids
+   * @param updateAllUnseenNotificationDto array of notifications_ids
+   * @returns message => updated successfully
+   */
   async updateUnseenNotificationByIds(updateAllUnseenNotificationDto: UpdateAllUnseenNotificationDto) {
     try {
       const notifications = await this.notificationModel.updateMany(
@@ -63,7 +75,11 @@ export class NotificationService {
   }
 
 
+  /**
+   * get all notifications
+   * @returns array of Notification
+   */
   async getNotifications(): Promise<Notification[]> {
-    return await this.notificationModel.find()
+    return await this.notificationModel.find();
   }
 }
