@@ -61,4 +61,9 @@ export class NotificationService {
       throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR);
     }
   }
+
+
+  async getNotifications(): Promise<Notification[]> {
+    return await this.notificationModel.find()
+  }
 }
