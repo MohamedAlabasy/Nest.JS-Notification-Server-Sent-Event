@@ -5,6 +5,7 @@ import { InjectModel } from '@nestjs/mongoose';
 import { IMessage } from 'src/interfaces/IMessage.interface';
 import { Notification } from './entities/notification.entity';
 import { CreateNotificationsDto } from './dto/create-notifications.dto';
+import { UpdateAllUnseenNotificationDto } from './dto/update-all-unseen-notification.dto';
 
 @Injectable()
 export class NotificationService {
@@ -43,4 +44,21 @@ export class NotificationService {
     }
   }
 
+
+  async updateUnseenNotificationByIds(updateAllUnseenNotificationDto: UpdateAllUnseenNotificationDto) {
+    try {
+      const notifications = await this.notificationModel.updateMany(
+        { _id: { $in: updateAllUnseenNotificationDto.notifications_ids } },
+        { isSeen: true }
+      );
+
+      if (notifications.modifiedCount >= 1) return { message: 'updated successfully' };
+      else if (notifications.matchedCount < 1) throw new Error('not found');
+      else throw new Error('can not update due to database error');
+
+    } catch (error) {
+      this.logger.error('updateUnseenNotificationByIds : ' + error.message);
+      throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+  }
 }
