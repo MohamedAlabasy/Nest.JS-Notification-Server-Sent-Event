@@ -2,7 +2,7 @@
 
 ## Description:
 
-The goal of the project is to raise notification by use server sent event (SSE).
+The project aims to raise a notification using a server-sent-event (SSE).
 
 ## To run this project
 
